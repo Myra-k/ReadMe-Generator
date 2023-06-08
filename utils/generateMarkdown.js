@@ -3,6 +3,7 @@ function renderLicenseBadge(license) {
     return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`;
   }
   return '';
+  
 }
 
 
