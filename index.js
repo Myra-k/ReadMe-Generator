@@ -20,7 +20,7 @@ const questions = [
     {
         type: 'input',
         name: 'description',
-        message: 'Enter a description for your project',
+        message: 'Enter a description for your project:',
     },
     {
         type: 'list',
@@ -50,10 +50,28 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(markdown) {
+    fs.writeFile('readme.md', markdown, (err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('ReadMe file created!!');
+      }
+    });
+  }
+
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+
+    inquirer
+    .prompt(questions)
+    .then((responses) => {
+        const markdown = generateMarkdown(responses);
+
+        writeToFile(markdown);
+    });
+}
 
 // Function call to initialize app
 init();
