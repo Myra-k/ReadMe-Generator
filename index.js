@@ -25,12 +25,13 @@ const questions = [
     {
         type: 'list',
         name: 'licence',
-        message: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
+        message: 'Select a licence for your project:',
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
     },
     {
         type: 'input',
-        name: 'installation',
-        message: 'How do you install your projecr?',
+        name: 'install',
+        message: 'How do you install your project?',
     },
     {
         type: 'input',
